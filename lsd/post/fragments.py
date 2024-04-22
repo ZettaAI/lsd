@@ -1,11 +1,11 @@
 import mahotas
 import numpy as np
-import logging
-import waterz
+# import logging
+# import waterz
 from scipy.ndimage.morphology import distance_transform_edt
 from scipy.ndimage.filters import gaussian_filter, maximum_filter
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 def watershed(lsds, sigma, return_seeds=False, return_distances=False):
     '''Extract initial fragments from local shape descriptors ``lsds`` using a
@@ -93,7 +93,7 @@ def watershed_from_boundary_distance(
     maxima = max_filtered==boundary_distances
     seeds, n = mahotas.label(maxima)
 
-    logger.debug("Found %d fragments", n)
+    # logger.debug("Found %d fragments", n)
 
     if n == 0:
         return np.zeros(boundary_distances.shape, dtype=np.uint64), id_offset
